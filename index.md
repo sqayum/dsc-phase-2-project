@@ -1,5 +1,3 @@
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-
 # Building a Linear Regression Model to Estimate House Prices in *King County, Washington*
 
 ##### **Author: _Suleyman Qayum_**
