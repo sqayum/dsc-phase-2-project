@@ -172,10 +172,7 @@ The model has a total of $11$ parameters. All of the parameters were statistical
 
 > ##### $\beta_{\text{\{log-sqft-living\}}}$, $\beta_{\text{\{log-sqft-living | bathrooms\}}}$, & $\beta_{\text{\{log-sqft-living | bedrooms\}}}$
 
-* $beta                                       
-     text{{log - sqft - living - bathrooms}}
-
- describes the percentage increase in price per $1\%$ increase in square footage of the home *given there 0 bathrooms and 0 bedrooms*
+* \$\beta_{\text{\{log-sqft-living\}}}$\ describes the percentage increase in price per $1\%$ increase in square footage of the home *given there 0 bathrooms and 0 bedrooms*
 * $\beta_{\text{\{log-sqft-living | bathrooms\}}}$ describes how $\beta_{\text{\{log-sqft-living\}}}$ changes with respect to the number of bathrooms in the home. In other words, if a single full bathroom were to be added to a home, the model will account for this by adding $[\dfrac{1}{s_\text{bathrooms}}] \times \beta_{\text{\{log-sqft-living | bathrooms\}}}$ to $\beta_{\text{\{log-sqft-living\}}}$
 * $\beta_{\text{\{log-sqft-living | bedrooms\}}}$ describes how $\beta_{\text{\{log-sqft-living\}}}$ changes with respect to the number of bedrooms in the home. In other words, if a single bedroom were to be added to a home, the model will account for this by adding $[\dfrac{1}{s_\text{bedrooms}}] \times \beta_{\text{\{log-sqft-living | bedrooms\}}}$ to $\beta_{\text{\{log-sqft-living\}}}$
 [Note: $s_x$ = standard deviation of feature]
