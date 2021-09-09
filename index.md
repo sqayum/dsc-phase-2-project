@@ -229,31 +229,3 @@ The model explains about $%60$ of the variation of home prices in *King County*,
 
 As for grade, the company needs to investigates how exactly this rating is determined in *King County* due to its important as a predictor. Without an understanding of how this rating is assigned, it cannot be used to price custom homes, and the accuracy of the model will suffer greatly. Going further, since grade seems to be holistic, thorough research into this predictor would allow us to distill it out the more fundamental attibutes on which grade depends. These attributes would be much more suitable for use in a model, and would paint a clearer picture of the underlying factors that determine house prices in this county.
 
-<br>
-
-## Further Information
-
-Review the full analysis in the [ Jupyter Notebook](./home-price-estimator.ipynb) or the view the [Presentation](./Home_Price_Estimator_Presentation.pdf).
-
-*For any additional questions, please contact:*
-
-> **Suleyman Qayum (sqayum33@gmail.com)**
-
-<br>
-
-## Repository Structure
-```
-├── data
-    └── kc_house_data.csv
-├── images
-    ├── bathrooms_interaction.png
-    ├── bedrooms_interaction.png
-    ├── hist_residuals_final.png
-    ├── model_parameters_final.png
-    ├── model_validation_results.png
-    └── qq_plot_residuals_final.png
-├── Home_Price_Estimator_Presentation.pdf
-├── home_price-estimator.ipynb
-├── regression_utils.py
-└── README.md
-```
