@@ -172,9 +172,9 @@ The model has a total of $11$ parameters. All of the parameters were statistical
 
 > ##### $\beta_{\text{\{log-sqft-living\}}}$, $\beta_{\text{\{log-sqft-living | bathrooms\}}}$, & $\beta_{\text{\{log-sqft-living | bedrooms\}}}$
 
-* __$\beta_{\text{\{log-sqft-living\}}}$ describes the percentage increase in price per $1\%$ increase in square footage of the home *given there 0 bathrooms and 0 bedrooms*__
-* __$\beta_{\text{\{log-sqft-living | bathrooms\}}}$ describes how $\beta_{\text{\{log-sqft-living\}}}$ changes with respect to the number of bathrooms in the home. In other words, if a single full bathroom were to be added to a home, the model will account for this by adding $[\dfrac{1}{s_\text{bathrooms}}] \times \beta_{\text{\{log-sqft-living | bathrooms\}}}$ to $\beta_{\text{\{log-sqft-living\}}}$__
-* __$\beta_{\text{\{log-sqft-living | bedrooms\}}}$ describes how $\beta_{\text{\{log-sqft-living\}}}$ changes with respect to the number of bedrooms in the home. In other words, if a single bedroom were to be added to a home, the model will account for this by adding $[\dfrac{1}{s_\text{bedrooms}}] \times \beta_{\text{\{log-sqft-living | bedrooms\}}}$ to $\beta_{\text{\{log-sqft-living\}}}$__
+* $\beta_{\text{\{log-sqft-living\}}}$ describes the percentage increase in price per $1\%$ increase in square footage of the home *given there 0 bathrooms and 0 bedrooms*
+* $\beta_{\text{\{log-sqft-living | bathrooms\}}}$ describes how $\beta_{\text{\{log-sqft-living\}}}$ changes with respect to the number of bathrooms in the home. In other words, if a single full bathroom were to be added to a home, the model will account for this by adding $[\dfrac{1}{s_\text{bathrooms}}] \times \beta_{\text{\{log-sqft-living | bathrooms\}}}$ to $\beta_{\text{\{log-sqft-living\}}}$
+* $\beta_{\text{\{log-sqft-living | bedrooms\}}}$ describes how $\beta_{\text{\{log-sqft-living\}}}$ changes with respect to the number of bedrooms in the home. In other words, if a single bedroom were to be added to a home, the model will account for this by adding $[\dfrac{1}{s_\text{bedrooms}}] \times \beta_{\text{\{log-sqft-living | bedrooms\}}}$ to $\beta_{\text{\{log-sqft-living\}}}$
 [Note: $s_x$ = standard deviation of feature]
 
 $\beta_{\text{\{log-sqft-living\}}} = -0.0397$ means that price decreases about $0.04\%$ for a $1\%$ increase in square footage of the living area. This relatively small, negative change is counter-intuitive. It arises from the fact that, as `log-sqft-living` increases, so will `bathrooms` and `bedrooms`, which means  $\beta_{\text{\{log-sqft-living\}}}$ is adjusted by $\beta_{\text{\{log-sqft-living | bathrooms\}}}$ or $\beta_{\text{\{log-sqft-living | bedrooms\}}}$ everytime the total number of rooms change. Thus, all of the variance that was explained by $\beta_{\text{\{log-sqft-living\}}}$ before the interaction terms were present is now being captured by $\beta_{\text{\{log-sqft-living | bathrooms\}}}$ and $\beta_{\text{\{log-sqft-living | bedrooms\}}}$. In fact, the value of $\beta_{\text{\{log-sqft-living\}}}$ by itself is no longer relevant because it is now valid only when there are no bathrooms and bedrooms (which is a theoretical situation).
@@ -184,24 +184,24 @@ Likewise, $\beta_{\text{\{log-sqft-living | bedrooms\}}} = 0.4694$ means that $\
 
 > ##### $\beta_{\text{\{bathrooms\}}}$ & $\beta_{\text{\{bedrooms\}}}$
 
-* __$\beta_{\text{\{bathrooms\}}}$ describes the percentage increase in price for every unit bathroom added *given that the square footage of the home is 0*__
-* __$\beta_{\text{\{bedrooms\}}}$ describes the percentage increase in price for every unit bedroom added *given that the square footage of the home is 0*__
+* $\beta_{\text{\{bathrooms\}}}$ describes the percentage increase in price for every unit bathroom added *given that the square footage of the home is 0*
+* $\beta_{\text{\{bedrooms\}}}$ describes the percentage increase in price for every unit bedroom added *given that the square footage of the home is 0*
 
  Similar to what was explained above, this counter-intuitive result stems from the fact that most all the variance that was explained by $\beta_{\text{\{bathrooms\}}}$ and  $\beta_{\text{\{bedrooms\}}}$ before the interaction terms were present is now being captured by $\beta_{\text{\{log-sqft-living | bathrooms\}}}$ and $\beta_{\text{\{log-sqft-living | bedrooms\}}}$. These coefficients are no longer relevant because they are valid only when the square footage is $0$ (which is impossible).
 
 > ##### $\beta_{\text{\{log-sqft-living15\}}}$, $\beta_{\text{\{grade\}}}$, $\beta_{\text{\{condition\}}}$, $\beta_{\text{\{is-multi-storied\}}}$, $\beta_{\text{\{is-renovated\}}}$, & $\beta_{\text{\{has-basement\}}}$
 
-* __$\beta_{\text{\{log-sqft-living15\}}} = 0.0773$ means that price increases by $0.0773\%$ per $1\%$ increase in the average home square footage of the 15 nearest neighbors__
+* $\beta_{\text{\{log-sqft-living15\}}} = 0.0773$ means that price increases by $0.0773\%$ per $1\%$ increase in the average home square footage of the 15 nearest neighbors
 
-* __$\beta_{\text{\{grade\}}} = 0.2189$ means that price increases by $[e^{\beta_{\text{\{grade\}}}} - 1] * 100\% = 24.47\%$ per unit increase in rating for the home's grade__
+* $\beta_{\text{\{grade\}}} = 0.2189$ means that price increases by $[e^{\beta_{\text{\{grade\}}}} - 1] * 100\% = 24.47\%$ per unit increase in rating for the home's grade
 
-* __$\beta_{\text{\{condition\}}} = 0.0686$ means that price increases by $[e^{\beta_{\text{\{condition\}}}} - 1] * 100\% = 7.10\%$ per unit increase in rating for the home's condition__
+* $\beta_{\text{\{condition\}}} = 0.0686$ means that price increases by $[e^{\beta_{\text{\{condition\}}}} - 1] * 100\% = 7.10\%$ per unit increase in rating for the home's condition
 
-* __$\beta_{\text{\{is-multi-storied\}}} = 0.0549$ means that the price increases by $[e^{\beta_{\text{\{is-multi-storied\}}}} - 1] * 100\% = 5.64\%$ when going from a single-story home to a home with two or more stories__
+* $\beta_{\text{\{is-multi-storied\}}} = 0.0549$ means that the price increases by $[e^{\beta_{\text{\{is-multi-storied\}}}} - 1] * 100\% = 5.64\%$ when going from a single-story home to a home with two or more stories
 
-* __$\beta_{\text{\{is-renovated\}}} = 0.0428$ means that the price increases by $[e^{\beta_{\text{\{is-renovated\}}}} - 1] * 100\% = 4.38\%$ when going from a home that has never been renovated to one that has been renovated at least once__
+* $\beta_{\text{\{is-renovated\}}} = 0.0428$ means that the price increases by $[e^{\beta_{\text{\{is-renovated\}}}} - 1] * 100\% = 4.38\%$ when going from a home that has never been renovated to one that has been renovated at least once
 
-* __$\beta_{\text{\{has-basement\}}} = 0.0779$ means that the price increases by $[e^{\beta_{\text{\{has-basement\}}}} - 1] * 100\% = 8.10\%$ when going from a home without a basement to one that does have a basement__
+* $\beta_{\text{\{has-basement\}}} = 0.0779$ means that the price increases by $[e^{\beta_{\text{\{has-basement\}}}} - 1] * 100\% = 8.10\%$ when going from a home without a basement to one that does have a basement
 
 ### *Conclusion*
 
