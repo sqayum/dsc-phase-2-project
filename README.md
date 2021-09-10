@@ -162,7 +162,7 @@ The residuals are essentially normally distributed, with $skew = 0.067$ and $kur
 
 The validation results indicate that the model can effectively predict house prices in *King County*. A table summarizing these results is shown below:
 
-<center><img src="images/model_validation_results.png" width="300"></center>
+<center><img src="images/model_validation_results.PNG" width="300"></center>
 
 
 The model has a total of $11$ parameters. All of the parameters were statisticaly significant. A summary of these parameters is given in the table below:
